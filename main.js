@@ -1,4 +1,5 @@
-const arrSrc = [	"./pictures/tatum.webp",
+const arrSrc = [
+	"./pictures/tatum.webp",
 	"./pictures/butler.webp",
 	"./pictures/curry.webp",
 	"./pictures/durant.webp",
