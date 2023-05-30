@@ -1,0 +1,41 @@
+* {	margin: 0;
+}
+
+body {
+	background-image: url("./pictures/background.jpg");
+	background-color: #525252;
+	background-repeat: no-repeat;
+	background-blend-mode: multiply;
+	background-size: cover;
+	background-position: center;
+	overflow-x: hidden;
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+img {
+	animation-name: show;
+	animation-fill-mode: forwards;
+	width: 100px;
+}
+
+#paare {
+	position: absolute;
+	bottom: 15px;
+	right: 30px;
+	background-color: black;
+	color: white;
+	padding: 30px;
+}
+
+#img-container {
+	width: 80%;
+	height: 80vh;
+	display: grid;
+	justify-content: center;
+	grid-gap: 16px;
+	grid-template-columns: repeat(4, 140px);
+	grid-template-rows: repeat(4, calc(140px / 2 * 3));
+}
