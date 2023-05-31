@@ -1,5 +1,4 @@
-const arrSrc = [
-	"./pictures/tatum.webp",
+const arrSrc = [	"./pictures/tatum.webp",
 	"./pictures/butler.webp",
 	"./pictures/curry.webp",
 	"./pictures/durant.webp",
@@ -67,9 +66,30 @@ function updateValues() {
 	}
 }
 
+function checkForShadow() {
+	pairs.forEach((i, index) => {
+		if (i) {
+			if (
+				player1Turn &&
+				!document.querySelector(`.card${index}`).classList.contains("player2-shadow") &&
+				!document.querySelector(`.card${index}`).classList.contains("player1-shadow")
+			) {
+				document.querySelector(`.card${index}`).classList.add("player1-shadow");
+			} else if (
+				!player1Turn &&
+				!document.querySelector(`.card${index}`).classList.contains("player2-shadow") &&
+				!document.querySelector(`.card${index}`).classList.contains("player1-shadow")
+			) {
+				document.querySelector(`.card${index}`).classList.add("player2-shadow");
+			}
+		}
+	});
+}
+
 function getImg() {
 	arrSrc.forEach((i, index) => {
 		let div = document.createElement("div");
+		div.classList.add(`card${index}`);
 		div.classList.add("card");
 		div.innerHTML = `
 			<img id=${index} src="./pictures/flipped.png" alt="" />
@@ -100,6 +120,7 @@ function check() {
 		} else {
 			pairs2++;
 		}
+		checkForShadow();
 	} else {
 		turnAllBack();
 		player1Turn = !player1Turn;
