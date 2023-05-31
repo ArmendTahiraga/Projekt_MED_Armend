@@ -1,10 +1,14 @@
-*,
-*:hover,
-*:focus {
+* {
 	margin: 0;
 	color: #fff;
 	font-family: "Inter", sans-serif;
 	font-weight: 400;
+	outline: 0;
+	border: 0;
+}
+
+*:hover,
+*:focus {
 	outline: 0;
 	border: 0;
 }
@@ -33,6 +37,9 @@ input,
 input:hover,
 input:focus {
 	color: rgb(32, 32, 32);
+	display: block;
+	margin: 10px 0;
+	padding: 6px 8px;
 }
 
 input::-webkit-outer-spin-button,
@@ -45,21 +52,61 @@ input[type="number"] {
 	-moz-appearance: textfield;
 }
 
+label {
+	display: block;
+	margin-bottom: 10px;
+}
+
 .img-container {
 	width: 80%;
 	margin: 0 auto;
 	height: 80vh;
 	display: grid;
 	justify-content: center;
-	grid-gap: 16px;
-	grid-template-columns: repeat(4, 140px);
-	grid-template-rows: repeat(4, calc(140px / 2 * 3));
+	gap: 10px;
+	grid-template-columns: repeat(8, 140px);
+	grid-template-rows: repeat(2, calc(140px / 2 * 3));
 }
 
 .game-settings {
-	width: 200px;
-	height: 400px;
+	background-color: #eaeaea;
+	width: 300px;
+	min-height: 300px;
+	padding: 20px 20px;
+	border-radius: 4px;
 	animation: drop-down 0.3s cubic-bezier(0.17, 0.67, 0.56, 1.36) 0s 1;
+}
+
+.game-settings * {
+	color: #525252;
+}
+
+.submit-settings {
+	background-color: #404040;
+	color: #fff;
+	padding: 10px 12px;
+	border-radius: 4px;
+	margin-top: 10px;
+	cursor: pointer;
+}
+
+.card {
+	height: calc(140px / 2 * 3);
+	width: 140px;
+	border-radius: 10px;
+	background-color: #fff;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.player1 {
+	color: #ff0000;
+}
+
+.player2 {
+	color: #0000ff;
 }
 
 @keyframes drop-down {
