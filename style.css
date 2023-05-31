@@ -1,5 +1,12 @@
-* {
+*,
+*:hover,
+*:focus {
 	margin: 0;
+	color: #fff;
+	font-family: "Inter", sans-serif;
+	font-weight: 400;
+	outline: 0;
+	border: 0;
 }
 
 body {
@@ -22,21 +29,53 @@ img {
 	width: 100px;
 }
 
-#paare {
-	position: absolute;
-	bottom: 15px;
-	right: 30px;
-	background-color: black;
-	color: white;
-	padding: 30px;
+input,
+input:hover,
+input:focus {
+	color: rgb(32, 32, 32);
 }
 
-#img-container {
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+input[type="number"] {
+	-moz-appearance: textfield;
+}
+
+.img-container {
 	width: 80%;
+	margin: 0 auto;
 	height: 80vh;
 	display: grid;
 	justify-content: center;
 	grid-gap: 16px;
 	grid-template-columns: repeat(4, 140px);
 	grid-template-rows: repeat(4, calc(140px / 2 * 3));
+}
+
+.game-settings {
+	width: 200px;
+	height: 400px;
+	animation: drop-down 0.3s cubic-bezier(0.17, 0.67, 0.56, 1.36) 0s 1;
+}
+
+@keyframes drop-down {
+	0% {
+		transform: translateY(-600px);
+	}
+	100% {
+		transform: translateY(0);
+	}
+}
+
+@keyframes go-up {
+	0% {
+		transform: translateY(0);
+	}
+	100% {
+		transform: translateY(-600px);
+	}
 }

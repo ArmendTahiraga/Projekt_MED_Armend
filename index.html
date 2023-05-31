@@ -6,11 +6,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap">
     <title>Memory Game</title>
 </head>
 
 <body>
-    <div id="img-container"></div>
+    <div class="game-settings">
+        <form class="from">
+            <label class="round-label">
+                How many rounds do you want to have?
+                <input type="number" class="round-input" required>
+            </label>
+            <label class="player-label player1-label">
+                What is the name of the first player?
+                <input type="text" class="player-input player1-input" required>
+            </label>
+            <label class="player-label player2-label">
+                What is the name of the second player?
+                <input type="text" class="player-input player2-input" required>
+            </label>
+            <button type="submit" class="submit-settings">Start Game</button>
+        </form>
+    </div>
+    <div class="game">
+        <div class="game-info">
+            <h2 class="round"></h2>
+            <p class="player player1"></p>
+            <p class="score score1"></p>
+
+            <p class="player player2"></p>
+            <p class="score score2"></p>
+        </div>
+        <div class="img-container"></div>
+    </div>
 </body>
 
 <script src="./main.js"></script>

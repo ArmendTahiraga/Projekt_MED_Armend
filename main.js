@@ -1,5 +1,4 @@
-const arrSrc = [
-	"./pictures/tatum.webp",
+const arrSrc = [	"./pictures/tatum.webp",
 	"./pictures/butler.webp",
 	"./pictures/curry.webp",
 	"./pictures/durant.webp",
@@ -18,9 +17,35 @@ const arrSrc = [
 ].sort(() => Math.random() - 0.5);
 const img = [];
 const pairs = [];
-
+const from = document.querySelector(".from");
+const roundInput = document.querySelector(".round-input");
+const player1Input = document.querySelector(".player1-input");
+const player2Input = document.querySelector(".player2-input");
 let firstPictureSelected = "";
 let secondPictureSelected = "";
+let rounds = 0;
+let round = 1;
+let player1 = "";
+let player2 = "";
+let score1 = 0;
+let score2 = 0;
+
+document.querySelector(".game").style.display = "none";
+from.addEventListener("submit", handleOnSubmit);
+
+function handleOnSubmit(event) {
+	event.preventDefault();
+	rounds = roundInput.value;
+	player1 = player1Input.value;
+	player2 = player2Input.value;
+	document.querySelector(".game").style.display = "block";
+	document.querySelector(".game-settings").style.display = "none";
+	document.querySelector(".round").innerHTML = `Round: ${round}`;
+	document.querySelector(".player1").innerHTML = player1;
+	document.querySelector(".player2").innerHTML = player2;
+	document.querySelector(".score1").innerHTML = score1;
+	document.querySelector(".score2").innerHTML = score2;
+}
 
 function getImg() {
 	arrSrc.forEach((i, index) => {
@@ -30,7 +55,7 @@ function getImg() {
 		image.addEventListener("click", turnAround);
 		img.push(image);
 		pairs.push(false);
-		document.getElementById("img-container").append(image);
+		document.querySelector(".img-container").append(image);
 	});
 }
 
