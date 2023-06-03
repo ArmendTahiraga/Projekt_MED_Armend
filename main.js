@@ -22,7 +22,6 @@ const from = document.querySelector(".from");
 const roundInput = document.querySelector(".round-input");
 const player1Input = document.querySelector(".player1-input");
 const player2Input = document.querySelector(".player2-input");
-const winnerMessage = document.querySelector(".winner");
 const player1El = document.querySelector(".player1");
 const player2El = document.querySelector(".player2");
 let firstPictureSelected = "";
@@ -47,6 +46,7 @@ function handleOnSubmit(event) {
 	player2 = player2Input.value;
 	document.querySelector(".game").style.display = "block";
 	document.querySelector(".game-settings").style.display = "none";
+	document.body.style.alignItems = "flex-start";
 	updateValues();
 }
 
@@ -145,15 +145,21 @@ function check() {
 				pairs1 = 0;
 				pairs2 = 0;
 				round++;
+				pairs.forEach((i, index) => {
+					if (document.querySelector(`.card${index}`).classList.contains("player2-shadow")) {
+						document.querySelector(`.card${index}`).classList.remove("player2-shadow");
+					} else {
+						document.querySelector(`.card${index}`).classList.remove("player1-shadow");
+					}
+				});
 				updateValues();
-				console.log(pairs);
 			} else {
 				if (score1 > score2) {
-					winnerMessage.innerHTML = `The winner is ${player1}!`;
+					document.querySelector(".round").innerHTML = `The winner is ${player1}!`;
 				} else if (score1 < score2) {
-					winnerMessage.innerHTML = `The winner is ${player2}!`;
+					document.querySelector(".round").innerHTML = `The winner is ${player2}!`;
 				} else {
-					winnerMessage.innerHTML = `It's a draw!`;
+					document.querySelector(".round").innerHTML = `It's a draw!`;
 				}
 			}
 		}, 500);

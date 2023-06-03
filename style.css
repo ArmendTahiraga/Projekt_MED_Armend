@@ -61,7 +61,6 @@ label {
 .img-container {
 	width: 80%;
 	margin: 0 auto;
-	height: 80vh;
 	display: grid;
 	justify-content: center;
 	gap: 16px;
@@ -116,6 +115,47 @@ label {
 
 .player2-shadow {
 	box-shadow: #0000ff 0px 5px 15px;
+}
+
+.game-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 20px 0;
+}
+
+.players-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.round {
+	text-align: center;
+	font-weight: 600;
+}
+
+.game-info {
+	width: 27%;
+	background-color: #eaeaea;
+	padding: 10px 20px;
+	border-radius: 5px;
+}
+
+.game-info * {
+	color: #404040;
+}
+
+.player {
+	font-size: 1.2rem;
+	font-weight: 500;
+}
+.player1 {
+	color: #ff0000;
+}
+
+.player2 {
+	color: #0000ff;
 }
 
 @keyframes drop-down {
